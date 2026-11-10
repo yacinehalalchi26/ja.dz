@@ -19,7 +19,7 @@
 <style>
   :root{--b:#76142E;--deep:#4E1022;--gold:#E8C879;--ink:#25252A;--ease:cubic-bezier(.16,1,.3,1)}
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
+  html,body{height:100%;overscroll-behavior-y:auto}
   body{font-family:'Poppins',system-ui,sans-serif;color:#fff;background:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow:hidden}
   img,video{display:block;max-width:100%}
   a{color:inherit}
@@ -53,29 +53,49 @@
   .glass{display:block;max-width:none;background:none;border:0;padding:0;box-shadow:none;animation:none;backdrop-filter:none;-webkit-backdrop-filter:none}
   .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.68rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.85);text-shadow:0 1px 3px rgba(0,0,0,.45);animation:ja-up .9s var(--ease) .15s both}
   .eyebrow::before{content:"";width:34px;height:1px;background:rgba(255,255,255,.7)}
-  h1{font-size:clamp(2.5rem,6.4vw,5.6rem);font-weight:600;letter-spacing:-.04em;line-height:.98;margin:18px 0 18px;max-width:14ch;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.35),0 4px 34px rgba(0,0,0,.4)}
-  h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+  h1{font-size:clamp(2.5rem,6.4vw,5.6rem);font-weight:600;letter-spacing:-.04em;line-height:.98;margin:18px 0 18px;max-width:14ch;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.35),0 6px 28px rgba(0,0,0,.35)}
+  h1 .w{display:inline-block}
   h1 .w>span{display:inline-block;animation:ja-rise .9s var(--ease) both}
   h1 em{font-style:italic;font-weight:300;letter-spacing:-.02em;color:#fff;background:none;padding:0;border-radius:0;white-space:nowrap;display:inline-block;line-height:inherit;position:relative}
   .mid p{font-size:clamp(.98rem,1.25vw,1.12rem);max-width:44ch;color:rgba(255,255,255,.9);animation:ja-up .9s var(--ease) .55s both;text-shadow:0 1px 3px rgba(0,0,0,.45),0 2px 18px rgba(0,0,0,.35)}
   .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:clamp(22px,3.4vh,34px);animation:ja-up .9s var(--ease) .7s both}
-  .btn{position:relative;display:inline-flex;align-items:center;gap:12px;border-radius:999px;padding:17px 30px;font-weight:600;font-size:1rem;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .35s var(--ease),box-shadow .35s,background .25s,color .25s}
+  .btn{position:relative;display:inline-flex;align-items:center;gap:12px;border-radius:999px;padding:17px 30px;font-weight:600;font-size:1rem;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .7s var(--ease),box-shadow .7s var(--ease),background .35s,color .35s,border-color .35s}
   .btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
   .btn-main{background:var(--b);color:#fff;box-shadow:0 18px 44px rgba(0,0,0,.35)}
   .btn-main:hover{transform:translateY(-2px);background:#fff;color:var(--b)}
   .btn-main:hover svg{transform:translateX(4px)}
   .btn-ghost{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.4);border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:15.5px 28px}
   .btn-ghost svg{width:17px;height:17px}
-  .btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff;transform:translateY(-2px)}
+  .btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff;transform:translateY(-2px);text-shadow:none}
   /* état « focus » poussé par le vent */
   .btn.focus{transform:translateY(-3px) scale(1.04)}
-  .btn-main.focus{box-shadow:0 0 0 6px rgba(255,255,255,.25),0 24px 60px rgba(0,0,0,.45)}
+  .btn-main.focus{box-shadow:0 0 0 8px rgba(255,255,255,.14),0 24px 60px rgba(0,0,0,.45)}
   .btn-main.focus svg{transform:translateX(5px)}
-  .btn-ghost.focus{background:#fff;color:var(--ink);border-color:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.25),0 24px 60px rgba(0,0,0,.45)}
+  .btn-ghost.focus{background:#fff;color:var(--ink);border-color:#fff;box-shadow:0 0 0 8px rgba(255,255,255,.14),0 24px 60px rgba(0,0,0,.45)}
   .btn-ghost.focus svg{transform:translate(2px,-2px)}
 
+  /* ===== focus : la scène répond au geste ===== */
+  .media video,.media img{transition:transform 1.1s var(--ease),filter 1.1s var(--ease)}
+  .stage.push .media video,.stage.push .media img{transform:scale(1.02)}
+  .ctas{position:relative}
+  .ctas .btn{transition:transform .8s var(--ease),opacity .8s var(--ease),box-shadow .8s var(--ease),background .4s,color .4s,border-color .4s}
+  .stage.has-focus .btn:not(.focus){opacity:.5;transform:scale(.97)}
+  .btn.focus{opacity:1;transform:translateY(-2px) scale(1.03)}
+  .btn-main.focus{box-shadow:0 0 0 1px rgba(255,255,255,.35),0 22px 56px rgba(0,0,0,.45)}
+  .btn-ghost.focus{background:#fff;color:var(--ink);border-color:#fff;box-shadow:0 22px 56px rgba(0,0,0,.45);text-shadow:none}
+  .btn-ghost.focus svg{transform:translate(2px,-2px)}
+  /* ligne-repère qui glisse sous le bouton actif */
+  .rail{position:relative;height:1px;margin-top:14px;width:100%;max-width:520px;flex:none}
+  .rail i{position:absolute;top:0;height:1px;background:#fff;opacity:0;transition:left .8s var(--ease),width .8s var(--ease),opacity .5s;box-shadow:0 0 12px rgba(255,255,255,.6)}
+  .rail i.on{opacity:.9}
+  /* légende qui explique le bouton actif */
+  .helper{margin-top:12px;min-height:1.5em;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;font-size:.84rem;color:rgba(255,255,255,.82);text-shadow:0 1px 3px rgba(0,0,0,.45);opacity:0;transform:translateY(6px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .helper.on{opacity:1;transform:none}
+  @media(max-width:640px){.rail{height:1px;margin-top:10px}.rail i{display:none}.helper{font-size:.78rem;min-height:1.5em}}
+
   /* ===== bas : index des produits + réseaux ===== */
-  .bottom{padding:0 clamp(18px,5vw,64px) clamp(20px,3.2vh,40px);max-width:1360px;width:100%;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 24px;animation:ja-up .9s var(--ease) .9s both}
+  .bottom{padding:0 clamp(18px,5vw,64px) clamp(20px,3.2vh,40px);max-width:1360px;width:100%;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;animation:ja-up .9s var(--ease) .9s both}
+  .bottom .chips{flex-wrap:nowrap}
   .chips{display:flex;flex-wrap:wrap;gap:10px}
   .chips a{display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;padding:11px 18px 11px 14px;text-shadow:0 1px 3px rgba(0,0,0,.4);box-shadow:0 8px 24px rgba(0,0,0,.18);border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .25s,color .25s,border-color .25s,transform .3s var(--ease)}
   .chips a:hover{background:#fff;color:var(--ink);border-color:#fff;transform:translateY(-2px)}
@@ -90,23 +110,15 @@
   .so svg{width:18px;height:18px}
 
   /* ===== indice de geste ===== */
-  .hint{text-shadow:0 1px 3px rgba(0,0,0,.5);position:absolute;left:50%;bottom:clamp(18px,3vh,36px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7);pointer-events:none;transition:opacity .5s;animation:ja-up 1s var(--ease) 1.4s both}
+  .hint{text-shadow:0 1px 3px rgba(0,0,0,.5);position:absolute;right:clamp(18px,5vw,64px);left:auto;bottom:clamp(96px,14vh,130px);transform:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7);pointer-events:none;transition:opacity .5s;animation:ja-up 1s var(--ease) 1.4s both}
   .hint i{width:1px;height:34px;background:rgba(255,255,255,.7);display:block;transform-origin:top;animation:ja-drip 1.8s ease-in-out infinite}
   .hint.off{opacity:0;animation:none}
   @keyframes ja-drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-  /* ===== vent ===== */
-  .wind{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
-  .wind i{position:absolute;height:1px;width:38vw;left:-40vw;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.95) 55%,rgba(255,255,255,0));border-radius:2px;opacity:0;animation:ja-gust var(--d,1.1s) cubic-bezier(.2,.7,.2,1) var(--delay,0s) forwards;transform:rotate(var(--r,0deg));filter:drop-shadow(0 0 6px rgba(255,255,255,.6))}
-  @keyframes ja-gust{0%{opacity:0;transform:translateX(0) rotate(var(--r,0deg))}15%{opacity:1}100%{opacity:0;transform:translateX(calc(var(--tx,120vw))) rotate(var(--r,0deg))}}
-  html[dir="rtl"] .wind i{left:auto;right:-40vw;transform:rotate(var(--r,0deg))}
-  html[dir="rtl"] .wind i{animation-name:ja-gust-rtl}
-  @keyframes ja-gust-rtl{0%{opacity:0;transform:translateX(0) rotate(var(--r,0deg))}15%{opacity:1}100%{opacity:0;transform:translateX(calc(-1 * var(--tx,120vw))) rotate(var(--r,0deg))}}
-
   /* ===== animations ===== */
   @keyframes ja-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   @keyframes ja-down{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
-  @keyframes ja-rise{from{transform:translateY(110%)}to{transform:none}}
+  @keyframes ja-rise{from{transform:translateY(.45em);opacity:0}to{transform:none;opacity:1}}
 
   /* ===== arabe / RTL ===== */
   html[lang="ar"] body{font-family:'Tajawal','Poppins',system-ui,sans-serif}
@@ -126,7 +138,7 @@
     html[lang="ar"] h1{font-size:clamp(2.2rem,9.6vw,2.8rem)}
     .mid p{font-size:.95rem}
     .ctas .btn{padding:14px 20px;font-size:.95rem}
-    .bottom{flex-direction:column;align-items:flex-start;gap:12px}
+    .bottom{flex-direction:column;align-items:flex-start;gap:14px}
     .chips a small{display:none}
     .so{margin:0}
     .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}
@@ -149,7 +161,6 @@
     <video id="bg" muted autoplay loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback></video>
   </div>
   <div class="grain" aria-hidden="true"></div>
-  <div class="wind" id="wind" aria-hidden="true"></div>
   <div class="hint" id="hint" aria-hidden="true"><span data-fr="Glisser" data-ar="اسحب">Glisser</span><i></i></div>
 
   <header class="top">
@@ -162,13 +173,15 @@
 
   <section class="mid">
    <div class="glass">
-    <span class="eyebrow" data-fr="Juniors Academy · Alger" data-ar="جونيورز أكاديمي · الجزائر">Juniors Academy · Alger</span>
+    <span class="eyebrow" data-fr="Juniors Academy" data-ar="جونيورز أكاديمي">Juniors Academy</span>
     <h1 id="h1"></h1>
     <p data-fr="Londres, Oxford, Shanghai, Madrid… Nos jeunes partent, apprennent, et reviennent transformés. À votre tour." data-ar="لندن، أكسفورد، شنغهاي، مدريد… شبابنا يسافرون، يتعلمون، ويعودون مختلفين. جاء دورك.">Londres, Oxford, Shanghai, Madrid… Nos jeunes partent, apprennent, et reviennent transformés. À votre tour.</p>
     <div class="ctas">
       <a class="btn btn-main" id="cta1" href="https://juniors.academy/"><span data-fr="Je suis prêt" data-ar="أنا مستعد">Je suis prêt</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a class="btn btn-ghost" id="cta2" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer"><span data-fr="Parler à un conseiller" data-ar="تحدث مع مستشار">Parler à un conseiller</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
+    <div class="rail" aria-hidden="true"><i id="rail"></i></div>
+    <p class="helper" id="helper" aria-live="polite"></p>
    </div>
   </section>
 
@@ -179,6 +192,7 @@
       <a href="https://juniors.academy/language/"><i>03</i><b data-fr="Anglais<span class='long'> en ligne</span>" data-ar="الإنجليزية<span class='long'> عبر الإنترنت</span>">Anglais<span class="long"> en ligne</span></b><small data-fr="profs natifs" data-ar="أساتذة ناطقون">profs natifs</small></a>
     </nav>
     <div class="so">
+      <a href="mailto:admin@juniors.academy" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a>
       <a href="https://www.instagram.com/juniors.academy.dz" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a href="https://www.facebook.com/juniors.academy.dz" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v9h4v-9h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
       <a href="https://www.tiktok.com/@juniors.academy.dz" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.4 1.8 4.1 4.5 4.3v3.4c-1.7 0-3.2-.5-4.5-1.4v6.4a5.9 5.9 0 1 1-5.9-5.9c.4 0 .8 0 1.2.1v3.5a2.5 2.5 0 1 0 1.3 2.3V3z"/></svg></a>
@@ -220,39 +234,40 @@
 
 
   /* ---- geste : glisser → le vent mène au bouton ---- */
-  var step=0, busy=false, wind=document.getElementById('wind'), hint=document.getElementById('hint');
+  var step=0, busy=false, hint=document.getElementById('hint');
   var targets=[document.getElementById('cta1'), document.getElementById('cta2')];
-  function gust(target){
-    var r=target.getBoundingClientRect(), H=innerHeight, W=innerWidth, rtl=document.documentElement.dir==='rtl';
-    var cy=r.top+r.height/2, cx=r.left+r.width/2;
-    wind.innerHTML='';
-    for(var i=0;i<14;i++){
-      var s=document.createElement('i');
-      var y0=Math.random()*H;                 /* départ aléatoire */
-      var ang=Math.atan2(cy-y0,(rtl?-(W-cx):cx)+W*0.4)*180/Math.PI; /* penche vers le bouton */
-      s.style.top=y0+'px';
-      s.style.setProperty('--r',(ang*0.35)+'deg');
-      s.style.setProperty('--tx',((rtl?W-cx:cx)+W*0.55+Math.random()*W*0.15)+'px');
-      s.style.setProperty('--d',(0.9+Math.random()*0.6)+'s');
-      s.style.setProperty('--delay',(Math.random()*0.35)+'s');
-      s.style.width=(22+Math.random()*26)+'vw';
-      s.style.opacity='0';
-      wind.appendChild(s);
-    }
-    setTimeout(function(){ targets.forEach(function(b){b.classList.remove('focus');}); target.classList.add('focus'); },520);
-    setTimeout(function(){ wind.innerHTML=''; },2000);
-  }
-  function advance(dir){
-    if(busy) return; busy=true; setTimeout(function(){busy=false;},1100);
+  var stage=document.querySelector('.stage'), rail=document.getElementById('rail'), helper=document.getElementById('helper');
+  var HELP={fr:['Séjours, études, cours : tout sur notre site.','WhatsApp · réponse sous 24 h.'],
+            ar:['رحلات، دراسة، دروس — كل شيء على موقعنا.','واتساب · نرد خلال 24 ساعة.']};
+  function focusOn(idx,quiet){
+    var target=targets[idx-1], l=document.documentElement.lang==='ar'?'ar':'fr';
+    if(!quiet){ stage.classList.add('push'); setTimeout(function(){stage.classList.remove('push');},900); }
     hint.classList.add('off');
-    if(step===0){ step=(dir>0?1:2); } else { step=(step===1?2:1); }
-    gust(targets[step-1]);
+    stage.classList.add('has-focus');
+    targets.forEach(function(b){b.classList.remove('focus');});
+    /* léger temps mort : la scène respire, puis le choix se pose */
+    setTimeout(function(){
+      target.classList.add('focus');
+      var cr=document.querySelector('.ctas').getBoundingClientRect(), r=target.getBoundingClientRect();
+      var left=document.documentElement.dir==='rtl' ? (cr.right-r.right) : (r.left-cr.left);
+      rail.style.left=left+'px'; rail.style.width=r.width+'px'; rail.classList.add('on');
+      if(document.documentElement.dir==='rtl'){ rail.style.left='auto'; rail.style.right=left+'px'; }
+      helper.classList.remove('on'); setTimeout(function(){ helper.textContent=HELP[l][idx-1]; helper.classList.add('on'); },200);
+    },quiet?0:260);
   }
-  addEventListener('wheel',function(e){ if(Math.abs(e.deltaY)<8) return; advance(e.deltaY>0?1:-1); },{passive:true});
+  targets.forEach(function(b,i){ b.addEventListener('mouseenter',function(){ if(step===i+1) return; step=i+1; focusOn(step,true); }); });
+  function advance(dir){
+    if(dir<0) return;                       /* vers le haut : rien, le navigateur garde son geste (rafraîchir) */
+    if(busy) return; busy=true; setTimeout(function(){busy=false;},1200);
+    hint.classList.add('off');
+    step=(step===1?2:1);
+    focusOn(step);
+  }
+  addEventListener('wheel',function(e){ if(e.deltaY<8) return; advance(1); },{passive:true});
   var ty=null;
   addEventListener('touchstart',function(e){ ty=e.touches[0].clientY; },{passive:true});
-  addEventListener('touchend',function(e){ if(ty===null) return; var dy=ty-e.changedTouches[0].clientY; ty=null; if(Math.abs(dy)>40) advance(dy>0?1:-1); },{passive:true});
-  addEventListener('keydown',function(e){ if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' ') advance(1); if(e.key==='ArrowUp'||e.key==='PageUp') advance(-1); if(e.key==='Enter'&&step>0) targets[step-1].click(); });
+  addEventListener('touchend',function(e){ if(ty===null) return; var dy=ty-e.changedTouches[0].clientY; ty=null; if(dy>40) advance(1); },{passive:true});
+  addEventListener('keydown',function(e){ if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' ') advance(1); if(e.key==='Enter'&&step>0) targets[step-1].click(); });
 
   /* ---- FR / AR ---- */
   function setLang(l){
@@ -261,6 +276,7 @@
     document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('on',b.dataset.lang===l); });
     document.title=(l==='ar'?'جونيورز أكاديمي — ja.dz':'Juniors Academy — ja.dz');
     title(l);
+    if(step>0){ helper.textContent=HELP[l][step-1]; }
     try{ localStorage.setItem('ja-lang',l); }catch(e){}
   }
   document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click',function(){ setLang(b.dataset.lang); }); });
