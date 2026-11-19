@@ -1306,6 +1306,59 @@ body.jam-open{overflow:hidden}
  .cz-anim .cz-opt .f{transform:none}.cz-anim .cz-opt .d{left:calc(var(--b)*20%)}.cz-anim .cz-opt .x,.cz-anim .cz-opt span{opacity:1}
  .cz-bar{transition:none}
 }
+
+/* ===== v6 : six carrés, nouveau CTA ===== */
+.cz-six{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cz-six li{display:flex;flex-direction:column;gap:6px;padding:22px 22px 24px;border-radius:20px;background:var(--paper);min-height:150px}
+.cz-six-i{display:grid;place-items:center;width:42px;height:42px;margin-bottom:8px;border-radius:12px;background:#fff;color:var(--accent)}
+.cz-six-i svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cz-six b{font-size:clamp(1.15rem,1.8vw,1.4rem);font-weight:600;letter-spacing:-.02em;line-height:1.2;color:var(--deep)}
+.cz-six li>span:last-child{font-size:.92rem;line-height:1.45;color:var(--body)}
+.cz-anim6 .cz-six li{opacity:0;transform:translateY(14px)}
+.cz-anim6 .cz-six.in li{opacity:1;transform:none;transition:opacity .6s var(--e) calc(var(--k)*.07s),transform .8s var(--e) calc(var(--k)*.07s)}
+.cz-six-cta{margin-top:26px;align-items:center;gap:14px 24px}
+/* CTA */
+.cz-go{text-align:center}
+.cz-route{position:relative;z-index:1;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:end;gap:14px;max-width:560px;margin:26px auto 6px}
+.cz-route-c{font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.2}
+.cz-route-c b{display:block;font-size:1.5rem;font-weight:600;letter-spacing:-.02em;color:#fff}
+.cz-route svg{width:100%;height:56px;overflow:visible;margin-bottom:10px}
+.cz-route path{fill:none;stroke-width:2;vector-effect:non-scaling-stroke}
+.cz-route-bg{stroke:rgba(255,255,255,.28);stroke-dasharray:2 7;stroke-linecap:round}
+.cz-route-fg{stroke:var(--blue);stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s var(--e)}
+.cz-route-pl{position:absolute;left:0;top:0;width:24px;height:24px;margin:-12px 0 0 -12px;color:#fff;transition:transform 1.2s var(--e);pointer-events:none}
+.cz-route-pl svg{width:24px;height:24px;display:block}
+.cz-route .cz-route-pl path{fill:currentColor;stroke:none}
+.cz-route-pl{filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.cz-q{position:relative;z-index:1;margin-top:22px}
+.cz-q-t{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 12px!important;max-width:none!important;font-size:1rem!important;font-weight:600;color:#fff!important}
+.cz-q-t span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.55);font-size:.74rem;transition:background .4s,color .4s}
+.cz-q.done .cz-q-t span{background:#fff;color:var(--accent);border-color:#fff}
+.cz-chips2{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.cz-chips2 button{appearance:none;font:inherit;font-size:.96rem;font-weight:500;min-height:48px;padding:0 22px;border-radius:999px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s var(--e)}
+.cz-chips2 button:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+.cz-chips2 button:active{transform:scale(.97)}
+.cz-chips2 button[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--accent);font-weight:600}
+.cz-go-msg{position:relative;z-index:1;min-height:3.3em;margin:24px auto 0!important;max-width:52ch;font-size:1.04rem!important;color:#fff!important;transition:opacity .35s}
+.cz-go-msg.sw{opacity:0}
+.cz-go .cz-ctas{margin-top:14px}
+.cz-go .cz-btn-white{transition:transform .4s var(--e),box-shadow .4s}
+.cz-go.ready .cz-btn-white{box-shadow:0 0 0 6px rgba(255,255,255,.18)}
+.cz-go-tel{position:relative;z-index:1;display:inline-block;margin-top:18px;padding:10px 4px;font-size:.92rem;color:rgba(255,255,255,.85)!important;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:860px){
+ .cz-six{grid-template-columns:1fr 1fr;gap:10px}
+ .cz-six li{padding:16px 16px 18px;min-height:0;border-radius:18px}
+ .cz-six-i{width:36px;height:36px;border-radius:10px;margin-bottom:4px}.cz-six-i svg{width:19px;height:19px}
+ .cz-six b{font-size:1.08rem}
+ .cz-six li>span:last-child{font-size:.86rem}
+ .cz-six-cta .sc-btn{display:none}
+ .cz-go .cz-ctas{flex-direction:column}
+ .cz-go .cz-ctas .sc-btn{width:100%}
+ .cz-chips2 button{flex:1 1 auto;padding:0 16px}
+ .cz-route{gap:10px}.cz-route-c b{font-size:1.2rem}
+}
+@media(max-width:380px){.cz-six li{padding:14px 13px 16px}.cz-six b{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.cz-anim6 .cz-six li{opacity:1;transform:none}.cz-route-fg,.cz-route-pl{transition:none}}
 </style>
 </head>
 <body>
@@ -1342,25 +1395,23 @@ body.jam-open{overflow:hidden}
 <nav class="cz-nav" id="czNav" aria-label="Sur cette page">
   <div class="cz-nav-row">
     <div class="cz-nav-in">
-      <a href="#cz-essentiel">L'essentiel</a><a href="#cz-prague">Prague</a><a href="#cz-voies">Les deux voies</a><a href="#cz-universites">Universités</a><a href="#cz-surplace">Sur place</a><a href="#cz-parcours">Accompagnement</a><a href="#cz-faq">Questions</a>
+      <a href="#cz-essentiel">L'essentiel</a><a href="#cz-prague">Prague</a><a href="#cz-voies">Programmes</a><a href="#cz-universites">Universités</a><a href="#cz-surplace">Sur place</a><a href="#cz-parcours">Accompagnement</a>
     </div>
     <a class="cz-nav-cta" href="/apply/?destination=tcheque">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </nav>
 
 <section class="cz-sec cz-sec--white" id="cz-essentiel">
-  <div class="cz-wrap cz-brief">
-    <div class="cz-brief-h">
-      <p class="cz-eyebrow">En bref</p>
-      <h2>L'essentiel, <em>en une minute.</em></h2>
-      <div class="cz-ctas">
-        <a class="sc-btn sc-btn--primary" href="/apply/?destination=tcheque">Je souhaite en savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="cz-tlink" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">Poser une question sur WhatsApp</a>
-      </div>
+  <div class="cz-wrap">
+    <p class="cz-eyebrow">En bref</p>
+    <h2>L'essentiel, <em>en une minute.</em></h2>
+    <ul class="cz-six">
+      <li style="--k:0"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><b>1 an</b><span>de préparation à Prague, avant l&#x27;université</span></li><li style="--k:1"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h9a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-3.5 3v-3H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M17 10h3a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v2.5L16.5 19H13a2 2 0 0 1-2-2v-.5"/></svg></span><b>Tchèque ou anglais</b><span>vous choisissez la langue de vos études</span></li><li style="--k:2"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12C12 7.5 8.5 5 4 5c0 4.5 3.5 7 8 7zM12 14c0-3.5 3-6 8-6 0 4-3 6-8 6z"/></svg></span><b>Dès zéro</b><span>débutants acceptés pour la voie tchèque</span></li><li style="--k:3"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h15M13 6l6 6-6 6"/></svg></span><b>Janvier ou septembre</b><span>deux rentrées chaque année</span></li><li style="--k:4"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11v5c2.5 2.5 8.5 2.5 11 0v-5M21.5 9v6"/></svg></span><b>Sans frais de scolarité</b><span>dans les universités publiques, en tchèque</span></li><li style="--k:5"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.8C19.5 16.4 12 21 12 21z"/></svg></span><b>D'Alger au campus</b><span>admission, visa et logement avec nous</span></li>
+    </ul>
+    <div class="cz-ctas cz-six-cta">
+      <a class="sc-btn sc-btn--primary" href="/apply/?destination=tcheque">Je souhaite en savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="cz-tlink" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">Poser une question sur WhatsApp</a>
     </div>
-    <dl class="cz-brief-l">
-      <div><dt>Le principe</dt><dd>Une année préparatoire à Prague, puis l&#x27;entrée dans une université tchèque.</dd></div><div><dt>Voie tchèque</dt><dd>Débutants acceptés. Ensuite, l&#x27;université publique sans frais de scolarité. <a href="#cz-voies" data-set="cz">Voir le programme</a></dd></div><div><dt>Voie anglaise</dt><dd>Des bases scolaires suffisent. Ensuite, un cursus international, aux frais fixés par chaque université. <a href="#cz-voies" data-set="en">Voir le programme</a></dd></div><div><dt>Rentrées</dt><dd>Septembre ou janvier. Prochaines rentrées : janvier 2027 et septembre 2027.</dd></div><div><dt>Avec nous</dt><dd>Orientation, admission, visa, logement et suivi toute l&#x27;année, depuis Alger.</dd></div>
-    </dl>
   </div>
 </section>
 
@@ -1379,8 +1430,8 @@ body.jam-open{overflow:hidden}
 
 <section class="cz-sec cz-sec--white" id="cz-voies" data-mode="cz">
   <div class="cz-wrap">
-    <p class="cz-eyebrow">Le choix</p>
-    <h2>Deux voies, <em>une même ville.</em></h2>
+    <p class="cz-eyebrow">Les programmes</p>
+    <h2>Étudier en tchèque <em>ou en anglais.</em></h2>
     <p class="cz-lead">Choisissez la langue de vos futures études : le programme s'affiche juste en dessous.</p>
     <div class="cz-doors" role="tablist" aria-label="Langue du programme">
       <button class="cz-door" type="button" role="tab" data-set="cz" aria-selected="true">
@@ -1452,7 +1503,7 @@ body.jam-open{overflow:hidden}
     <div class="cz-side">
       <p class="cz-eyebrow">Notre accompagnement</p>
       <h2>À vos côtés, <em>d'Alger au campus.</em></h2>
-      <p class="cz-stat"><b>99 %</b>des étudiants du programme sont admis à l'université ou passent au niveau suivant.</p>
+      <p class="cz-stat"><b>99 %</b>des étudiants réussissent leur année préparatoire.</p>
     </div>
     <div class="cz-accs">
       <details class="cz-acc cz-acc--num" name="cza" open><summary><span class="cz-acc-n">01</span><span class="cz-acc-t">On choisit la voie</span><i aria-hidden="true"></i></summary><p>Nous analysons vos notes, votre niveau de langue, la filière souhaitée et votre budget. Si vous avez déjà le niveau, nous vous orientons vers l&#x27;admission directe en licence ou en master, sans année préparatoire. Dans tous les cas, nous prévoyons un plan A, un plan B et un plan C.</p></details><details class="cz-acc cz-acc--num" name="cza"><summary><span class="cz-acc-n">02</span><span class="cz-acc-t">Une année suivie de près</span><i aria-hidden="true"></i></summary><p>Assiduité, résultats aux tests, travail personnel, progression en langue, retours des professeurs : tout est suivi. Si un étudiant décroche, un coordinateur le rencontre, fixe un plan d&#x27;action avec des échéances et ajoute du soutien, sans attendre le mois de mai.</p></details><details class="cz-acc cz-acc--num" name="cza"><summary><span class="cz-acc-n">03</span><span class="cz-acc-t">L&#x27;admission à l&#x27;université</span><i aria-hidden="true"></i></summary><p>Choix des universités, dépôt des candidatures, reconnaissance du diplôme algérien (nostrification), préparation aux examens d&#x27;entrée et aux entretiens, échanges avec l&#x27;université jusqu&#x27;à la décision, puis inscription finale.</p></details><details class="cz-acc cz-acc--num" name="cza"><summary><span class="cz-acc-n">04</span><span class="cz-acc-t">Le visa et le logement</span><i aria-hidden="true"></i></summary><p>Nous préparons avec vous le dossier de visa étudiant et sa prolongation. L&#x27;assurance santé étudiante est mise en place pendant l&#x27;admission. Nous réservons votre chambre en résidence.</p></details><details class="cz-acc cz-acc--num" name="cza"><summary><span class="cz-acc-n">05</span><span class="cz-acc-t">Les parents dans la boucle</span><i aria-hidden="true"></i></summary><p>Deux réunions parents-professeurs en ligne par an, en octobre et en avril. Entre les deux, les parents peuvent demander l&#x27;assiduité, les résultats et les commentaires des professeurs.</p></details>
@@ -1461,32 +1512,36 @@ body.jam-open{overflow:hidden}
   </div>
 </section>
 
-<section class="cz-sec cz-sec--white" id="cz-faq">
-  <div class="cz-wrap">
-    <div class="cz-faqhead">
-      <div><p class="cz-eyebrow">Questions</p><h2>Vos <em>questions.</em></h2></div>
-      <p>Une autre question ? Appelez-nous au <a href="tel:+213550527722" style="white-space:nowrap">0550 52 77 22</a> ou écrivez-nous sur <a href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
-    </div>
-    <div class="cz-faq2">
-      <div class="cz-accs"><details class="cz-acc" name="czq"><summary><span class="cz-acc-t">Faut-il parler tchèque avant de partir ?</span><i aria-hidden="true"></i></summary><p>Non. L&#x27;année préparatoire en tchèque accepte les débutants complets et mène jusqu&#x27;au niveau B2, voire C1. Si vous avez déjà le niveau B1, un parcours plus court existe.</p></details><details class="cz-acc" name="czq"><summary><span class="cz-acc-t">Les études sont-elles vraiment gratuites ?</span><i aria-hidden="true"></i></summary><p>Dans les universités publiques, les cursus enseignés en tchèque sont sans frais de scolarité, quelle que soit la nationalité. Il reste à prévoir les frais de dossier, le logement et la vie quotidienne. Les cursus en anglais sont payants : leurs frais dépendent de chaque université.</p></details><details class="cz-acc" name="czq"><summary><span class="cz-acc-t">Tchèque ou anglais : comment choisir ?</span><i aria-hidden="true"></i></summary><p>Le tchèque demande un an d&#x27;apprentissage, puis ouvre les études publiques sans frais de scolarité. L&#x27;anglais permet de viser directement un cursus international. Envoyez-nous vos relevés de notes : nous vous disons quelle voie vous convient.</p></details></div>
-      <div class="cz-accs"><details class="cz-acc" name="czq"><summary><span class="cz-acc-t">Je parle déjà bien anglais. Ai-je besoin d&#x27;une année préparatoire ?</span><i aria-hidden="true"></i></summary><p>Pas forcément. Si votre niveau de langue et votre dossier sont suffisants, nous vous orientons vers l&#x27;admission directe en licence ou en master.</p></details><details class="cz-acc" name="czq"><summary><span class="cz-acc-t">Quel budget prévoir ?</span><i aria-hidden="true"></i></summary><p>Il dépend de la langue, de la formule et du logement choisis. Après un premier échange, nous vous envoyons un devis détaillé, sans engagement.</p></details><details class="cz-acc" name="czq"><summary><span class="cz-acc-t">Et pour le visa ?</span><i aria-hidden="true"></i></summary><p>Nous préparons avec vous le dossier de visa étudiant. Les délais varient : mieux vaut commencer plusieurs mois avant la rentrée.</p></details></div>
-    </div>
-  </div>
-</section>
+
 
 <section class="cz-ctawrap cz-ctawrap--white" id="cz-candidater">
-  <div class="cz-cta">
+  <div class="cz-cta cz-go" data-l="" data-r="">
     <svg class="cz-sky " viewBox="0 0 1200 230" aria-hidden="true"><path class="c" d="M0 230 L0 176 L60 168 L120 152 L140 150 L140 120 L163 120 L163 98 L169 98 L175 80 L181 98 L187 98 L187 120 L330 120 L330 110 L474 110 L474 62 L479 62 L479 54 L486 10 L493 54 L493 62 L498 62 L498 74 L508 74 L508 62 L513 62 L513 54 L520 10 L527 54 L527 62 L532 62 L532 86 L546 74 L636 74 L636 48 L642 48 L642 38 L647 31 L651 23 L654 23 L654 15 L657 15 L658 2 L659 15 L662 15 L662 23 L665 23 L669 31 L674 38 L674 48 L680 48 L680 74 L722 74 L730 80 L737 92 L737 110 L800 110 L803 110 L803 74 L811 52 L819 74 L819 110 L828 110 L828 74 L836 52 L844 74 L844 110 L850 114 L1000 114 L1004 114 L1004 90 L1017 74 L1030 90 L1030 120 L1098 132 L1104 132 L1104 112 L1115 100 L1126 112 L1126 140 L1160 152 L1200 166 L1200 230Z"/><path class="w" d="M150 128h5v8h-5zM192 128h5v8h-5zM206 128h5v8h-5zM220 128h5v8h-5zM234 128h5v8h-5zM248 128h5v8h-5zM262 128h5v8h-5zM276 128h5v8h-5zM290 128h5v8h-5zM304 128h5v8h-5zM318 128h5v8h-5zM332 120h5v8h-5zM346 120h5v8h-5zM360 120h5v8h-5zM374 120h5v8h-5zM388 120h5v8h-5zM402 120h5v8h-5zM416 120h5v8h-5zM430 120h5v8h-5zM444 120h5v8h-5zM458 120h5v8h-5zM746 124h5v8h-5zM760 124h5v8h-5zM774 124h5v8h-5zM788 124h5v8h-5zM858 124h5v8h-5zM872 124h5v8h-5zM886 124h5v8h-5zM900 124h5v8h-5zM914 124h5v8h-5zM928 124h5v8h-5zM942 124h5v8h-5zM956 124h5v8h-5zM970 124h5v8h-5zM984 124h5v8h-5zM998 124h5v8h-5zM552 84h4v16h-4zM565 84h4v16h-4zM578 84h4v16h-4zM591 84h4v16h-4zM604 84h4v16h-4zM617 84h4v16h-4zM630 84h4v16h-4z"/><path class="b" d="M0 186H1200V230H1181.3A48.0 34.6 0 0 0 1085.3 230H1048.0A48.0 34.6 0 0 0 952.0 230H914.7A48.0 34.6 0 0 0 818.7 230H781.3A48.0 34.6 0 0 0 685.3 230H648.0A48.0 34.6 0 0 0 552.0 230H514.7A48.0 34.6 0 0 0 418.7 230H381.3A48.0 34.6 0 0 0 285.3 230H248.0A48.0 34.6 0 0 0 152.0 230H114.7A48.0 34.6 0 0 0 18.7 230H0ZM-3.0 186v-12h6v12zM130.3 186v-12h6v12zM263.7 186v-12h6v12zM397.0 186v-12h6v12zM530.3 186v-12h6v12zM663.7 186v-12h6v12zM797.0 186v-12h6v12zM930.3 186v-12h6v12zM1063.7 186v-12h6v12zM1197.0 186v-12h6v12z"/></svg>
-    <h2>Et si la prochaine rentrée <em>était la vôtre&nbsp;?</em></h2>
-    <ol class="cz-next">
-      <li><b>1</b>On fait connaissance</li><li><b>2</b>On choisit la voie</li><li><b>3</b>On prépare le dossier</li><li><b>4</b>Vous partez</li>
-    </ol>
-    <p>Laissez-nous vos coordonnées, cela prend trois minutes. Nous vous rappelons sous 24&nbsp;h pour répondre à vos questions.</p>
+    <h2>Votre rentrée à Prague <em>commence ici.</em></h2>
+    <div class="cz-route" aria-hidden="true">
+      <span class="cz-route-c"><b>ALG</b>Alger</span>
+      <svg viewBox="0 0 400 70" preserveAspectRatio="none"><path class="cz-route-bg" d="M6 60 Q200 -10 394 60"/><path class="cz-route-fg" id="czRoute" pathLength="1" d="M6 60 Q200 -10 394 60"/></svg>
+      <span class="cz-route-c"><b>PRG</b>Prague</span>
+      <i class="cz-route-pl" id="czPlane"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 15.5v-2l-8-5V3.2a1.5 1.5 0 0 0-3 0v5.3l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.500L13.5 18v-5z"/></svg></i>
+    </div>
+    <div class="cz-q">
+      <p class="cz-q-t"><span>1</span>Vous voulez étudier en…</p>
+      <div class="cz-chips2" data-q="l" role="group" aria-label="Langue des études">
+        <button type="button" data-v="tchèque">Tchèque</button><button type="button" data-v="anglais">Anglais</button><button type="button" data-v="?">Je ne sais pas encore</button>
+      </div>
+    </div>
+    <div class="cz-q">
+      <p class="cz-q-t"><span>2</span>Pour quelle rentrée ?</p>
+      <div class="cz-chips2" data-q="r" role="group" aria-label="Rentrée">
+        <button type="button" data-v="janvier 2027">Janvier 2027</button><button type="button" data-v="septembre 2027">Septembre 2027</button><button type="button" data-v="plus tard">Plus tard</button>
+      </div>
+    </div>
+    <p class="cz-go-msg" id="czMsg" aria-live="polite">Deux clics, et on vous rappelle sous 24&nbsp;h.</p>
     <div class="cz-ctas">
       <a class="sc-btn cz-btn-white" href="/apply/?destination=tcheque">Je souhaite en savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="sc-btn sc-btn--ghost" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp</a>
-      <a class="sc-btn sc-btn--ghost" href="tel:+213550527722">Appeler le 0550&nbsp;52&nbsp;77&nbsp;22</a>
+      <a class="sc-btn sc-btn--ghost" id="czWa" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp</a>
     </div>
+    <a class="cz-go-tel" href="tel:+213550527722">Ou appelez-nous au 0550&nbsp;52&nbsp;77&nbsp;22</a>
   </div>
 </section>
 
@@ -1552,6 +1607,35 @@ body.jam-open{overflow:hidden}
   if('IntersectionObserver' in window){ prog.classList.add('cz-anim');
     var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); else if(e.target.classList.contains('cz-flds')) e.target.classList.remove('in'); }); },{threshold:.15});
     anim.forEach(function(e){io.observe(e);}); }
+  /* six carrés */
+  var six=document.querySelector('.cz-six');
+  if(six&&'IntersectionObserver' in window&&!reduce){ document.querySelector('.cz').classList.add('cz-anim6');
+    var io6=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){six.classList.add('in');io6.disconnect();}});},{threshold:.2}); io6.observe(six); }
+  /* CTA interactif */
+  var go=document.querySelector('.cz-go'), route=document.getElementById('czRoute'), plane=document.getElementById('czPlane'), msg=document.getElementById('czMsg'), wa=document.getElementById('czWa'), rsvg=route.ownerSVGElement;
+  var pick={l:'',r:''};
+  function place(t){ var L=route.getTotalLength(), p=route.getPointAtLength(L*t), p2=route.getPointAtLength(Math.min(L,L*t+2)), m=rsvg.getScreenCTM(), box=go.querySelector('.cz-route').getBoundingClientRect();
+    if(!m) return; var x=p.x*m.a+m.e-box.left, y=p.y*m.d+m.f-box.top, ang=Math.atan2((p2.y-p.y)*m.d,(p2.x-p.x)*m.a)*180/Math.PI;
+    plane.style.transform='translate('+x+'px,'+y+'px) rotate('+(ang+90)+'deg)'; route.style.strokeDashoffset=1-t; }
+  function progress(){ return (pick.l?.5:0)+(pick.r?.5:0); }
+  function text(){
+    var l=pick.l, r=pick.r;
+    if(!l&&!r) return 'Deux clics, et on vous rappelle sous 24 h.';
+    if(l&&!r) return (l==='?'?'Pas de souci : on vous aide à choisir.':'Études en '+l+', très bon choix.')+' Et pour quelle rentrée ?';
+    if(!l&&r) return 'Rentrée '+(r==='plus tard'?'plus tard':'de '+r)+', noté. Et dans quelle langue ?';
+    return 'C’est noté : '+(l==='?'?'langue à choisir ensemble':'études en '+l)+', '+(r==='plus tard'?'rentrée plus tard':'rentrée de '+r)+'. Cliquez ci-dessous, on vous rappelle sous 24 h.';
+  }
+  function update(){
+    msg.classList.add('sw'); setTimeout(function(){ msg.textContent=text(); msg.classList.remove('sw'); },reduce?0:250);
+    place(progress()); go.classList.toggle('ready',!!(pick.l&&pick.r));
+    var t='Bonjour Juniors Academy, je souhaite en savoir plus sur les études à Prague'+(pick.l&&pick.l!=='?'?' (en '+pick.l+')':'')+(pick.r?', rentrée '+pick.r:'')+'.';
+    wa.href='https://wa.me/213550527722?text='+encodeURIComponent(t);
+  }
+  [].forEach.call(go.querySelectorAll('.cz-chips2'),function(g){ var bs=[].slice.call(g.querySelectorAll('button')); bs.forEach(function(b){ b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',function(){ var on=b.getAttribute('aria-pressed')!=='true'; bs.forEach(function(x){x.setAttribute('aria-pressed','false');}); b.setAttribute('aria-pressed',on); pick[g.dataset.q]=on?b.dataset.v:''; g.parentNode.classList.toggle('done',on); update(); }); }); });
+  place(0); window.addEventListener('resize',function(){place(progress());});
+  /* au premier passage : l'avion fait un petit bout de chemin */
+  if('IntersectionObserver' in window&&!reduce){ var ioG=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ ioG.disconnect(); if(!progress()){ place(.12); } } });},{threshold:.4}); ioG.observe(go); }
   /* barre d'action sur téléphone */
   var bar=document.getElementById('czBar'), hero=document.getElementById('hero'), end=document.getElementById('cz-candidater');
   function barState(){ var y=window.scrollY, on=y>hero.offsetTop+hero.offsetHeight-80 && y+window.innerHeight<end.offsetTop+120; if(bar.classList.contains('on')!==on){ bar.classList.toggle('on',on); bar.setAttribute('aria-hidden',!on); [].forEach.call(bar.querySelectorAll('a'),function(a){a.tabIndex=on?0:-1;}); } }
