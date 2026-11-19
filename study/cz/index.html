@@ -1359,6 +1359,56 @@ body.jam-open{overflow:hidden}
 }
 @media(max-width:380px){.cz-six li{padding:14px 13px 16px}.cz-six b{font-size:1rem}}
 @media(prefers-reduced-motion:reduce){.cz-anim6 .cz-six li{opacity:1;transform:none}.cz-route-fg,.cz-route-pl{transition:none}}
+
+/* ===== v7 : l'essentiel éditorial, CTA de nuit ===== */
+.cz-facts{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.cz-facts li{position:relative;padding:22px 26px 30px 0;border-bottom:1px solid var(--line)}
+.cz-facts li:not(:nth-child(3n+1)){padding-left:26px;border-left:1px solid var(--line)}
+.cz-facts-n{display:block;font-size:.74rem;font-weight:500;letter-spacing:.08em;color:var(--muted);font-variant-numeric:tabular-nums}
+.cz-facts-h{margin:30px 0 8px;font-size:clamp(1.45rem,2.5vw,2.05rem);font-weight:600;letter-spacing:-.035em;line-height:1.08;color:var(--ink)}
+.cz-facts-h em{font-style:italic;font-weight:300;color:var(--accent)}
+.cz-facts-t{margin:0;max-width:30ch;font-size:.93rem;line-height:1.5;color:var(--body)}
+.cz-anim7 .cz-facts{border-top-color:transparent;background:linear-gradient(var(--ink),var(--ink)) 0 0/0 1px no-repeat}
+.cz-anim7 .cz-facts li{opacity:0;transform:translateY(10px)}
+.cz-anim7 .cz-facts.in{background-size:100% 1px;transition:background-size 1.2s var(--e)}
+.cz-anim7 .cz-facts.in li{opacity:1;transform:none;transition:opacity .7s var(--e) calc(.15s + var(--k)*.08s),transform .9s var(--e) calc(.15s + var(--k)*.08s)}
+.cz-six-cta{margin-top:30px}
+/* CTA de nuit */
+.cz-night{background:linear-gradient(180deg,#14303F 0%,#1D4256 55%,#2B5A72 100%);padding:clamp(48px,7vw,92px) clamp(22px,5vw,72px) clamp(120px,17vw,220px)!important}
+.cz-night h2{font-size:clamp(1.9rem,4vw,3.1rem)}
+.cz-night>p{margin-top:14px!important}
+.cz-night .cz-ctas{margin-top:26px}
+.cz-night-sky{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.cz-night-sky b{position:absolute;width:var(--s);height:var(--s);border-radius:50%;background:#fff;opacity:.15}
+.cz-night.in .cz-night-sky b{animation:czTw 4.5s ease-in-out var(--d) infinite}
+@keyframes czTw{0%,100%{opacity:.12}50%{opacity:.75}}
+.cz-night-plane{position:absolute;left:0;top:6%;width:16px;height:16px;color:rgba(255,255,255,.75);transform:translateX(-60px) rotate(90deg);opacity:0}
+.cz-night-plane svg{width:16px;height:16px;display:block}
+.cz-night-plane::after{content:"";position:absolute;top:50%;left:7px;width:1px;height:220px;transform-origin:top;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0))}
+.cz-night.in .cz-night-plane{animation:czFlyBy 24s linear 1.5s infinite}
+@keyframes czFlyBy{0%{transform:translate(-60px,40px) rotate(84deg);opacity:0}4%{opacity:1}60%{opacity:1}66%{transform:translate(calc(1300px),-30px) rotate(84deg);opacity:0}100%{transform:translate(1300px,-30px) rotate(84deg);opacity:0}}
+.cz-night-city .c{fill:#0F2A38;opacity:.85}
+.cz-night-city .b{fill:#0B2230}
+.cz-night-city .wn{fill:#DCEAF1;opacity:.12}
+.cz-night.in .cz-night-city .wn{animation:czLit var(--t) ease-in-out var(--d) infinite}
+@keyframes czLit{0%,100%{opacity:.12}30%,75%{opacity:.85}}
+.cz-night-city .rv{fill:#88B4C8;opacity:0}
+.cz-night.in .cz-night-city .rv{animation:czRv 5s ease-in-out var(--d) infinite}
+@keyframes czRv{0%,100%{opacity:0;transform:translateX(0)}50%{opacity:.55;transform:translateX(14px)}}
+.cz-night h2,.cz-night>p,.cz-night .cz-ctas{position:relative;z-index:1}
+@media(max-width:860px){
+ .cz-facts{grid-template-columns:1fr 1fr}
+ .cz-facts li,.cz-facts li:not(:nth-child(3n+1)){padding:16px 14px 20px 0;border-left:0}
+ .cz-facts li:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+ .cz-facts-h{margin:18px 0 6px;font-size:1.3rem}
+ .cz-facts-t{font-size:.86rem}
+ .cz-night .cz-ctas{flex-direction:column}.cz-night .cz-ctas .sc-btn{width:100%}
+ .cz-night-city{width:210%!important;left:-55%!important;right:auto!important}
+ .cz-night{padding-bottom:calc(210vw*230/1200*.82)!important}
+ .cz-night-plane{top:3%}
+}
+@media(max-width:370px){.cz-facts-h{font-size:1.15rem}}
+@media(prefers-reduced-motion:reduce){.cz-anim7 .cz-facts li{opacity:1;transform:none}.cz-anim7 .cz-facts{border-top-color:var(--ink);background:none}.cz-night *{animation:none!important}.cz-night-city .wn{opacity:.6}}
 </style>
 </head>
 <body>
@@ -1405,9 +1455,9 @@ body.jam-open{overflow:hidden}
   <div class="cz-wrap">
     <p class="cz-eyebrow">En bref</p>
     <h2>L'essentiel, <em>en une minute.</em></h2>
-    <ul class="cz-six">
-      <li style="--k:0"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><b>1 an</b><span>de préparation à Prague, avant l&#x27;université</span></li><li style="--k:1"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h9a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-3.5 3v-3H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M17 10h3a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v2.5L16.5 19H13a2 2 0 0 1-2-2v-.5"/></svg></span><b>Tchèque ou anglais</b><span>vous choisissez la langue de vos études</span></li><li style="--k:2"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12C12 7.5 8.5 5 4 5c0 4.5 3.5 7 8 7zM12 14c0-3.5 3-6 8-6 0 4-3 6-8 6z"/></svg></span><b>Dès zéro</b><span>débutants acceptés pour la voie tchèque</span></li><li style="--k:3"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h15M13 6l6 6-6 6"/></svg></span><b>Janvier ou septembre</b><span>deux rentrées chaque année</span></li><li style="--k:4"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11v5c2.5 2.5 8.5 2.5 11 0v-5M21.5 9v6"/></svg></span><b>Sans frais de scolarité</b><span>dans les universités publiques, en tchèque</span></li><li style="--k:5"><span class="cz-six-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.8C19.5 16.4 12 21 12 21z"/></svg></span><b>D'Alger au campus</b><span>admission, visa et logement avec nous</span></li>
-    </ul>
+    <ol class="cz-facts">
+      <li style="--k:0"><span class="cz-facts-n">01</span><p class="cz-facts-h">Un an <em>à Prague</em></p><p class="cz-facts-t">pour préparer l&#x27;université, sur place</p></li><li style="--k:1"><span class="cz-facts-n">02</span><p class="cz-facts-h">Tchèque <em>ou anglais</em></p><p class="cz-facts-t">la langue de vos études, au choix</p></li><li style="--k:2"><span class="cz-facts-n">03</span><p class="cz-facts-h">Dès <em>zéro</em></p><p class="cz-facts-t">aucun niveau de tchèque demandé au départ</p></li><li style="--k:3"><span class="cz-facts-n">04</span><p class="cz-facts-h">Janvier <em>ou septembre</em></p><p class="cz-facts-t">deux rentrées chaque année</p></li><li style="--k:4"><span class="cz-facts-n">05</span><p class="cz-facts-h"><em>Sans</em> frais de scolarité</p><p class="cz-facts-t">à l&#x27;université publique, pour les cursus en tchèque</p></li><li style="--k:5"><span class="cz-facts-n">06</span><p class="cz-facts-h">D'Alger <em>au campus</em></p><p class="cz-facts-t">admission, visa, logement : on s&#x27;en occupe avec vous</p></li>
+    </ol>
     <div class="cz-ctas cz-six-cta">
       <a class="sc-btn sc-btn--primary" href="/apply/?destination=tcheque">Je souhaite en savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="cz-tlink" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">Poser une question sur WhatsApp</a>
@@ -1515,33 +1565,15 @@ body.jam-open{overflow:hidden}
 
 
 <section class="cz-ctawrap cz-ctawrap--white" id="cz-candidater">
-  <div class="cz-cta cz-go" data-l="" data-r="">
-    <svg class="cz-sky " viewBox="0 0 1200 230" aria-hidden="true"><path class="c" d="M0 230 L0 176 L60 168 L120 152 L140 150 L140 120 L163 120 L163 98 L169 98 L175 80 L181 98 L187 98 L187 120 L330 120 L330 110 L474 110 L474 62 L479 62 L479 54 L486 10 L493 54 L493 62 L498 62 L498 74 L508 74 L508 62 L513 62 L513 54 L520 10 L527 54 L527 62 L532 62 L532 86 L546 74 L636 74 L636 48 L642 48 L642 38 L647 31 L651 23 L654 23 L654 15 L657 15 L658 2 L659 15 L662 15 L662 23 L665 23 L669 31 L674 38 L674 48 L680 48 L680 74 L722 74 L730 80 L737 92 L737 110 L800 110 L803 110 L803 74 L811 52 L819 74 L819 110 L828 110 L828 74 L836 52 L844 74 L844 110 L850 114 L1000 114 L1004 114 L1004 90 L1017 74 L1030 90 L1030 120 L1098 132 L1104 132 L1104 112 L1115 100 L1126 112 L1126 140 L1160 152 L1200 166 L1200 230Z"/><path class="w" d="M150 128h5v8h-5zM192 128h5v8h-5zM206 128h5v8h-5zM220 128h5v8h-5zM234 128h5v8h-5zM248 128h5v8h-5zM262 128h5v8h-5zM276 128h5v8h-5zM290 128h5v8h-5zM304 128h5v8h-5zM318 128h5v8h-5zM332 120h5v8h-5zM346 120h5v8h-5zM360 120h5v8h-5zM374 120h5v8h-5zM388 120h5v8h-5zM402 120h5v8h-5zM416 120h5v8h-5zM430 120h5v8h-5zM444 120h5v8h-5zM458 120h5v8h-5zM746 124h5v8h-5zM760 124h5v8h-5zM774 124h5v8h-5zM788 124h5v8h-5zM858 124h5v8h-5zM872 124h5v8h-5zM886 124h5v8h-5zM900 124h5v8h-5zM914 124h5v8h-5zM928 124h5v8h-5zM942 124h5v8h-5zM956 124h5v8h-5zM970 124h5v8h-5zM984 124h5v8h-5zM998 124h5v8h-5zM552 84h4v16h-4zM565 84h4v16h-4zM578 84h4v16h-4zM591 84h4v16h-4zM604 84h4v16h-4zM617 84h4v16h-4zM630 84h4v16h-4z"/><path class="b" d="M0 186H1200V230H1181.3A48.0 34.6 0 0 0 1085.3 230H1048.0A48.0 34.6 0 0 0 952.0 230H914.7A48.0 34.6 0 0 0 818.7 230H781.3A48.0 34.6 0 0 0 685.3 230H648.0A48.0 34.6 0 0 0 552.0 230H514.7A48.0 34.6 0 0 0 418.7 230H381.3A48.0 34.6 0 0 0 285.3 230H248.0A48.0 34.6 0 0 0 152.0 230H114.7A48.0 34.6 0 0 0 18.7 230H0ZM-3.0 186v-12h6v12zM130.3 186v-12h6v12zM263.7 186v-12h6v12zM397.0 186v-12h6v12zM530.3 186v-12h6v12zM663.7 186v-12h6v12zM797.0 186v-12h6v12zM930.3 186v-12h6v12zM1063.7 186v-12h6v12zM1197.0 186v-12h6v12z"/></svg>
+  <div class="cz-cta cz-night">
+    <div class="cz-night-sky" aria-hidden="true"><b style="left:75.6%;top:26.4%;--d:4.67s;--s:2px"></b><b style="left:62.8%;top:29.8%;--d:4.73s;--s:2px"></b><b style="left:78.8%;top:38.4%;--d:4.44s;--s:2px"></b><b style="left:21.8%;top:24.7%;--d:4.39s;--s:2px"></b><b style="left:77.3%;top:23.8%;--d:1.16s;--s:3px"></b><b style="left:92.9%;top:22.8%;--d:5.62s;--s:2px"></b><b style="left:92.8%;top:19.3%;--d:1.32s;--s:2px"></b><b style="left:47.2%;top:18.2%;--d:2.90s;--s:3px"></b><b style="left:82.0%;top:24.1%;--d:3.92s;--s:3px"></b><b style="left:11.0%;top:31.7%;--d:5.46s;--s:3px"></b><b style="left:73.5%;top:24.1%;--d:1.07s;--s:3px"></b><b style="left:34.3%;top:37.6%;--d:5.83s;--s:2px"></b><b style="left:46.5%;top:35.2%;--d:0.51s;--s:2px"></b><b style="left:19.0%;top:9.3%;--d:0.91s;--s:2px"></b><b style="left:78.8%;top:10.1%;--d:4.96s;--s:2px"></b><b style="left:64.8%;top:18.7%;--d:3.29s;--s:2px"></b><b style="left:5.0%;top:37.6%;--d:4.36s;--s:2px"></b><b style="left:52.5%;top:43.2%;--d:2.60s;--s:2px"></b><b style="left:80.7%;top:12.9%;--d:1.51s;--s:2px"></b><b style="left:50.1%;top:36.1%;--d:1.96s;--s:3px"></b><b style="left:42.4%;top:9.5%;--d:5.46s;--s:2px"></b><b style="left:87.4%;top:31.8%;--d:4.89s;--s:3px"></b><b style="left:42.5%;top:42.5%;--d:3.01s;--s:3px"></b><b style="left:17.3%;top:25.4%;--d:5.24s;--s:2px"></b><b style="left:60.2%;top:36.6%;--d:0.90s;--s:2px"></b><b style="left:47.5%;top:34.5%;--d:3.34s;--s:2px"></b><i class="cz-night-plane"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 15.5v-2l-8-5V3.2a1.5 1.5 0 0 0-3 0v5.3l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.500L13.5 18v-5z"/></svg></i></div>
+    <svg class="cz-sky cz-night-city" viewBox="0 0 1200 230" aria-hidden="true"><path class="c" d="M0 230 L0 176 L60 168 L120 152 L140 150 L140 120 L163 120 L163 98 L169 98 L175 80 L181 98 L187 98 L187 120 L330 120 L330 110 L474 110 L474 62 L479 62 L479 54 L486 10 L493 54 L493 62 L498 62 L498 74 L508 74 L508 62 L513 62 L513 54 L520 10 L527 54 L527 62 L532 62 L532 86 L546 74 L636 74 L636 48 L642 48 L642 38 L647 31 L651 23 L654 23 L654 15 L657 15 L658 2 L659 15 L662 15 L662 23 L665 23 L669 31 L674 38 L674 48 L680 48 L680 74 L722 74 L730 80 L737 92 L737 110 L800 110 L803 110 L803 74 L811 52 L819 74 L819 110 L828 110 L828 74 L836 52 L844 74 L844 110 L850 114 L1000 114 L1004 114 L1004 90 L1017 74 L1030 90 L1030 120 L1098 132 L1104 132 L1104 112 L1115 100 L1126 112 L1126 140 L1160 152 L1200 166 L1200 230Z"/><rect class="wn" x="150" y="128" width="5" height="8" style="--d:2.91s;--t:6.9s"/><rect class="wn" x="192" y="128" width="5" height="8" style="--d:5.86s;--t:6.4s"/><rect class="wn" x="206" y="128" width="5" height="8" style="--d:4.82s;--t:8.2s"/><rect class="wn" x="220" y="128" width="5" height="8" style="--d:0.52s;--t:9.0s"/><rect class="wn" x="234" y="128" width="5" height="8" style="--d:0.34s;--t:8.6s"/><rect class="wn" x="248" y="128" width="5" height="8" style="--d:0.63s;--t:6.5s"/><rect class="wn" x="262" y="128" width="5" height="8" style="--d:3.82s;--t:11.0s"/><rect class="wn" x="276" y="128" width="5" height="8" style="--d:1.11s;--t:7.3s"/><rect class="wn" x="290" y="128" width="5" height="8" style="--d:5.65s;--t:11.7s"/><rect class="wn" x="304" y="128" width="5" height="8" style="--d:5.19s;--t:8.4s"/><rect class="wn" x="318" y="128" width="5" height="8" style="--d:8.79s;--t:6.3s"/><rect class="wn" x="332" y="120" width="5" height="8" style="--d:7.73s;--t:7.7s"/><rect class="wn" x="346" y="120" width="5" height="8" style="--d:1.30s;--t:6.7s"/><rect class="wn" x="360" y="120" width="5" height="8" style="--d:2.78s;--t:10.9s"/><rect class="wn" x="374" y="120" width="5" height="8" style="--d:1.63s;--t:9.5s"/><rect class="wn" x="388" y="120" width="5" height="8" style="--d:5.75s;--t:8.2s"/><rect class="wn" x="402" y="120" width="5" height="8" style="--d:4.93s;--t:6.4s"/><rect class="wn" x="416" y="120" width="5" height="8" style="--d:0.54s;--t:7.2s"/><rect class="wn" x="430" y="120" width="5" height="8" style="--d:6.12s;--t:8.6s"/><rect class="wn" x="444" y="120" width="5" height="8" style="--d:2.83s;--t:9.5s"/><rect class="wn" x="458" y="120" width="5" height="8" style="--d:4.08s;--t:7.8s"/><rect class="wn" x="746" y="124" width="5" height="8" style="--d:7.15s;--t:10.2s"/><rect class="wn" x="760" y="124" width="5" height="8" style="--d:2.20s;--t:9.4s"/><rect class="wn" x="774" y="124" width="5" height="8" style="--d:4.73s;--t:11.3s"/><rect class="wn" x="788" y="124" width="5" height="8" style="--d:6.57s;--t:7.7s"/><rect class="wn" x="858" y="124" width="5" height="8" style="--d:8.82s;--t:6.7s"/><rect class="wn" x="872" y="124" width="5" height="8" style="--d:3.76s;--t:10.5s"/><rect class="wn" x="886" y="124" width="5" height="8" style="--d:1.37s;--t:8.9s"/><rect class="wn" x="900" y="124" width="5" height="8" style="--d:0.35s;--t:10.0s"/><rect class="wn" x="914" y="124" width="5" height="8" style="--d:6.88s;--t:9.4s"/><rect class="wn" x="928" y="124" width="5" height="8" style="--d:7.88s;--t:7.9s"/><rect class="wn" x="942" y="124" width="5" height="8" style="--d:6.26s;--t:9.6s"/><rect class="wn" x="956" y="124" width="5" height="8" style="--d:5.22s;--t:8.7s"/><rect class="wn" x="970" y="124" width="5" height="8" style="--d:7.56s;--t:11.7s"/><rect class="wn" x="984" y="124" width="5" height="8" style="--d:4.27s;--t:10.0s"/><rect class="wn" x="998" y="124" width="5" height="8" style="--d:0.55s;--t:10.2s"/><rect class="wn" x="552" y="84" width="4" height="16" style="--d:5.82s;--t:12.0s"/><rect class="wn" x="565" y="84" width="4" height="16" style="--d:7.40s;--t:7.7s"/><rect class="wn" x="578" y="84" width="4" height="16" style="--d:3.47s;--t:10.0s"/><rect class="wn" x="591" y="84" width="4" height="16" style="--d:0.20s;--t:8.8s"/><rect class="wn" x="604" y="84" width="4" height="16" style="--d:1.51s;--t:6.7s"/><rect class="wn" x="617" y="84" width="4" height="16" style="--d:0.53s;--t:10.6s"/><rect class="wn" x="630" y="84" width="4" height="16" style="--d:1.16s;--t:7.5s"/><path class="b" d="M0 186H1200V230H1181.3A48.0 34.6 0 0 0 1085.3 230H1048.0A48.0 34.6 0 0 0 952.0 230H914.7A48.0 34.6 0 0 0 818.7 230H781.3A48.0 34.6 0 0 0 685.3 230H648.0A48.0 34.6 0 0 0 552.0 230H514.7A48.0 34.6 0 0 0 418.7 230H381.3A48.0 34.6 0 0 0 285.3 230H248.0A48.0 34.6 0 0 0 152.0 230H114.7A48.0 34.6 0 0 0 18.7 230H0ZM-3.0 186v-12h6v12zM130.3 186v-12h6v12zM263.7 186v-12h6v12zM397.0 186v-12h6v12zM530.3 186v-12h6v12zM663.7 186v-12h6v12zM797.0 186v-12h6v12zM930.3 186v-12h6v12zM1063.7 186v-12h6v12zM1197.0 186v-12h6v12z"/><rect class="rv" x="461.7731645405466" y="219" width="20.25627643360388" height="1.6" rx=".8" style="--d:4.97s"/><rect class="rv" x="527.581763072744" y="224" width="25.779495661964617" height="1.6" rx=".8" style="--d:2.33s"/><rect class="rv" x="174.72654160697917" y="219" width="42.19156515155842" height="1.6" rx=".8" style="--d:2.42s"/><rect class="rv" x="334.6158029007038" y="219" width="45.62107826803321" height="1.6" rx=".8" style="--d:0.43s"/><rect class="rv" x="791.4770571078203" y="219" width="44.81647371099176" height="1.6" rx=".8" style="--d:0.51s"/><rect class="rv" x="190.5406235439531" y="214" width="22.23635472725922" height="1.6" rx=".8" style="--d:1.71s"/><rect class="rv" x="764.1238449787331" y="214" width="31.578956449557985" height="1.6" rx=".8" style="--d:1.32s"/><rect class="rv" x="685.7095592174488" y="219" width="25.894060225148657" height="1.6" rx=".8" style="--d:4.14s"/><rect class="rv" x="184.61432347751807" y="224" width="28.339100041052312" height="1.6" rx=".8" style="--d:0.81s"/><rect class="rv" x="659.965582788223" y="214" width="37.33382239980738" height="1.6" rx=".8" style="--d:0.12s"/><rect class="rv" x="602.5053193699796" y="224" width="36.339060984057205" height="1.6" rx=".8" style="--d:4.75s"/><rect class="rv" x="855.9567649737892" y="219" width="43.18692428162266" height="1.6" rx=".8" style="--d:2.64s"/><rect class="rv" x="901.3655244978622" y="224" width="40.34044739350385" height="1.6" rx=".8" style="--d:0.73s"/><rect class="rv" x="463.3881647871336" y="219" width="29.035360447310197" height="1.6" rx=".8" style="--d:2.72s"/><rect class="rv" x="564.12078452667" y="219" width="19.74293900532325" height="1.6" rx=".8" style="--d:0.14s"/><rect class="rv" x="96.10280590261807" y="214" width="30.337552313093013" height="1.6" rx=".8" style="--d:2.64s"/><rect class="rv" x="144.2189846505271" y="224" width="19.472116908927475" height="1.6" rx=".8" style="--d:4.89s"/><rect class="rv" x="20.263608548532993" y="214" width="33.02532326311619" height="1.6" rx=".8" style="--d:4.32s"/><rect class="rv" x="1092.31209718346" y="224" width="18.71402482665208" height="1.6" rx=".8" style="--d:3.48s"/><rect class="rv" x="1007.9955864324162" y="224" width="28.534422130580346" height="1.6" rx=".8" style="--d:1.31s"/><rect class="rv" x="736.882823743308" y="219" width="34.86381729093623" height="1.6" rx=".8" style="--d:1.83s"/><rect class="rv" x="555.7911534518876" y="214" width="41.77023394156922" height="1.6" rx=".8" style="--d:0.84s"/></svg>
     <h2>Votre rentrée à Prague <em>commence ici.</em></h2>
-    <div class="cz-route" aria-hidden="true">
-      <span class="cz-route-c"><b>ALG</b>Alger</span>
-      <svg viewBox="0 0 400 70" preserveAspectRatio="none"><path class="cz-route-bg" d="M6 60 Q200 -10 394 60"/><path class="cz-route-fg" id="czRoute" pathLength="1" d="M6 60 Q200 -10 394 60"/></svg>
-      <span class="cz-route-c"><b>PRG</b>Prague</span>
-      <i class="cz-route-pl" id="czPlane"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 15.5v-2l-8-5V3.2a1.5 1.5 0 0 0-3 0v5.3l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.500L13.5 18v-5z"/></svg></i>
-    </div>
-    <div class="cz-q">
-      <p class="cz-q-t"><span>1</span>Vous voulez étudier en…</p>
-      <div class="cz-chips2" data-q="l" role="group" aria-label="Langue des études">
-        <button type="button" data-v="tchèque">Tchèque</button><button type="button" data-v="anglais">Anglais</button><button type="button" data-v="?">Je ne sais pas encore</button>
-      </div>
-    </div>
-    <div class="cz-q">
-      <p class="cz-q-t"><span>2</span>Pour quelle rentrée ?</p>
-      <div class="cz-chips2" data-q="r" role="group" aria-label="Rentrée">
-        <button type="button" data-v="janvier 2027">Janvier 2027</button><button type="button" data-v="septembre 2027">Septembre 2027</button><button type="button" data-v="plus tard">Plus tard</button>
-      </div>
-    </div>
-    <p class="cz-go-msg" id="czMsg" aria-live="polite">Deux clics, et on vous rappelle sous 24&nbsp;h.</p>
+    <p>Dites-nous où vous en êtes. On vous rappelle sous 24&nbsp;h.</p>
     <div class="cz-ctas">
       <a class="sc-btn cz-btn-white" href="/apply/?destination=tcheque">Je souhaite en savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="sc-btn sc-btn--ghost" id="czWa" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp</a>
+      <a class="sc-btn sc-btn--ghost" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
-    <a class="cz-go-tel" href="tel:+213550527722">Ou appelez-nous au 0550&nbsp;52&nbsp;77&nbsp;22</a>
   </div>
 </section>
 
@@ -1607,35 +1639,10 @@ body.jam-open{overflow:hidden}
   if('IntersectionObserver' in window){ prog.classList.add('cz-anim');
     var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); else if(e.target.classList.contains('cz-flds')) e.target.classList.remove('in'); }); },{threshold:.15});
     anim.forEach(function(e){io.observe(e);}); }
-  /* six carrés */
-  var six=document.querySelector('.cz-six');
-  if(six&&'IntersectionObserver' in window&&!reduce){ document.querySelector('.cz').classList.add('cz-anim6');
-    var io6=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){six.classList.add('in');io6.disconnect();}});},{threshold:.2}); io6.observe(six); }
-  /* CTA interactif */
-  var go=document.querySelector('.cz-go'), route=document.getElementById('czRoute'), plane=document.getElementById('czPlane'), msg=document.getElementById('czMsg'), wa=document.getElementById('czWa'), rsvg=route.ownerSVGElement;
-  var pick={l:'',r:''};
-  function place(t){ var L=route.getTotalLength(), p=route.getPointAtLength(L*t), p2=route.getPointAtLength(Math.min(L,L*t+2)), m=rsvg.getScreenCTM(), box=go.querySelector('.cz-route').getBoundingClientRect();
-    if(!m) return; var x=p.x*m.a+m.e-box.left, y=p.y*m.d+m.f-box.top, ang=Math.atan2((p2.y-p.y)*m.d,(p2.x-p.x)*m.a)*180/Math.PI;
-    plane.style.transform='translate('+x+'px,'+y+'px) rotate('+(ang+90)+'deg)'; route.style.strokeDashoffset=1-t; }
-  function progress(){ return (pick.l?.5:0)+(pick.r?.5:0); }
-  function text(){
-    var l=pick.l, r=pick.r;
-    if(!l&&!r) return 'Deux clics, et on vous rappelle sous 24 h.';
-    if(l&&!r) return (l==='?'?'Pas de souci : on vous aide à choisir.':'Études en '+l+', très bon choix.')+' Et pour quelle rentrée ?';
-    if(!l&&r) return 'Rentrée '+(r==='plus tard'?'plus tard':'de '+r)+', noté. Et dans quelle langue ?';
-    return 'C’est noté : '+(l==='?'?'langue à choisir ensemble':'études en '+l)+', '+(r==='plus tard'?'rentrée plus tard':'rentrée de '+r)+'. Cliquez ci-dessous, on vous rappelle sous 24 h.';
-  }
-  function update(){
-    msg.classList.add('sw'); setTimeout(function(){ msg.textContent=text(); msg.classList.remove('sw'); },reduce?0:250);
-    place(progress()); go.classList.toggle('ready',!!(pick.l&&pick.r));
-    var t='Bonjour Juniors Academy, je souhaite en savoir plus sur les études à Prague'+(pick.l&&pick.l!=='?'?' (en '+pick.l+')':'')+(pick.r?', rentrée '+pick.r:'')+'.';
-    wa.href='https://wa.me/213550527722?text='+encodeURIComponent(t);
-  }
-  [].forEach.call(go.querySelectorAll('.cz-chips2'),function(g){ var bs=[].slice.call(g.querySelectorAll('button')); bs.forEach(function(b){ b.setAttribute('aria-pressed','false');
-    b.addEventListener('click',function(){ var on=b.getAttribute('aria-pressed')!=='true'; bs.forEach(function(x){x.setAttribute('aria-pressed','false');}); b.setAttribute('aria-pressed',on); pick[g.dataset.q]=on?b.dataset.v:''; g.parentNode.classList.toggle('done',on); update(); }); }); });
-  place(0); window.addEventListener('resize',function(){place(progress());});
-  /* au premier passage : l'avion fait un petit bout de chemin */
-  if('IntersectionObserver' in window&&!reduce){ var ioG=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ ioG.disconnect(); if(!progress()){ place(.12); } } });},{threshold:.4}); ioG.observe(go); }
+  /* l'essentiel + scène de nuit : s'animent à l'écran */
+  if('IntersectionObserver' in window&&!reduce){ document.querySelector('.cz').classList.add('cz-anim7');
+    var ioF=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); if(e.target.classList.contains('cz-facts')) ioF.unobserve(e.target);} else if(e.target.classList.contains('cz-night')) e.target.classList.remove('in'); });},{threshold:.2});
+    [document.querySelector('.cz-facts'),document.querySelector('.cz-night')].forEach(function(e){if(e)ioF.observe(e);}); }
   /* barre d'action sur téléphone */
   var bar=document.getElementById('czBar'), hero=document.getElementById('hero'), end=document.getElementById('cz-candidater');
   function barState(){ var y=window.scrollY, on=y>hero.offsetTop+hero.offsetHeight-80 && y+window.innerHeight<end.offsetTop+120; if(bar.classList.contains('on')!==on){ bar.classList.toggle('on',on); bar.setAttribute('aria-hidden',!on); [].forEach.call(bar.querySelectorAll('a'),function(a){a.tabIndex=on?0:-1;}); } }
