@@ -755,6 +755,9 @@ html{scroll-behavior:smooth}
 .uk-mast::after{content:"";position:absolute;left:clamp(16px,4vw,32px);right:clamp(16px,4vw,32px);bottom:0;height:1px;background:rgba(255,255,255,.4)}
 .uk-mast b{font-weight:600;font-variant-numeric:tabular-nums}
 .uk-hero-in{position:relative;z-index:2;width:100%;max-width:1160px;margin:auto auto 0;padding:clamp(40px,7vw,80px) clamp(16px,4vw,32px) clamp(40px,6vw,72px)}
+.uk-tag{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px!important;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.uk-tag a{color:#fff;text-decoration:none;padding:10px 0;background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)) 0 calc(100% - 8px)/100% 1px no-repeat}
+.uk-tag span{padding:5px 10px;background:#fff;color:var(--accent);letter-spacing:.16em}
 .uk-hero h1{max-width:13ch;font-size:clamp(2.6rem,6.4vw,5.2rem);font-weight:600;letter-spacing:-.04em;line-height:1;text-shadow:0 2px 30px rgba(6,18,28,.4)}
 .uk-hero h1 em{color:#fff;font-weight:200}
 .uk-hero-sub{margin-top:20px!important;max-width:50ch;font-size:clamp(1rem,1.5vw,1.14rem);line-height:1.6;color:#fff;text-shadow:0 1px 16px rgba(6,18,28,.6)}
@@ -945,7 +948,7 @@ html{scroll-behavior:smooth}
   </picture>
   <div class="uk-mast"><span>Royaume-Uni</span><span class="sp-hide-phone">Angleterre · Écosse · Pays de Galles · Irlande du Nord</span><span>Londres, <b data-clock="Europe/London">—</b></span></div>
   <div class="uk-hero-in">
-    <p class="sp-eyebrow sp-eyebrow--light"><a href="/study/">Étudier à l'étranger</a> · Royaume-Uni</p>
+    <p class="uk-tag"><a href="/study/">Étudier à l'étranger</a><span>Royaume-Uni</span></p>
     <h1>Votre avenir s'écrit <em>au Royaume-Uni.</em></h1>
     <p class="uk-hero-sub">Une licence en trois ans, un master en un an, des universités reconnues partout dans le monde. Et une vie étudiante qu'on n'oublie pas.</p>
     <div class="sp-ctas">
