@@ -809,6 +809,19 @@ html{scroll-behavior:smooth}
 .us-yr:not(.auto) .us-yr-nav button[aria-selected="true"] i{width:100%}
 .us-yr-nav button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @keyframes usBar{from{width:0}to{width:100%}}
+/* les études */
+.us-facts{position:relative;background:var(--accent);color:#fff;padding:clamp(48px,7vw,96px) 0;overflow:hidden}
+.us-facts::before{content:"";position:absolute;left:0;right:0;top:0;height:28px;background:repeating-linear-gradient(180deg,var(--red) 0 4px,#fff 4px 8px)}
+.us-facts .us-kick{color:#fff;margin-top:14px!important}.us-facts .us-kick svg{fill:#fff}
+.us-facts h2{color:#fff}.us-facts h2 em{color:var(--blue)}
+.us-score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:34px 0 0}
+.us-score>div{padding:22px 22px 24px;border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+.us-score dt{font-size:clamp(3.4rem,7.4vw,6rem);font-weight:800;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
+.us-score dd{margin:12px 0 0;font-size:.98rem;line-height:1.45;color:rgba(255,255,255,.85)}
+.us-score dd b{display:block;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.us-score .txt dt{font-size:clamp(1.7rem,3.2vw,2.5rem);letter-spacing:-.03em;line-height:1;text-transform:uppercase;padding-top:.5em}
+.sp-anim .us-score>div{opacity:0;transform:translateY(14px)}
+.sp-anim .us-score.in>div{opacity:1;transform:none;transition:opacity .7s var(--e) calc(var(--k)*.1s),transform .9s var(--e) calc(var(--k)*.1s)}
 /* New York la nuit */
 .us-cta{--cta-em:#88B4C8;background:linear-gradient(180deg,#0A1B27 0%,#12303F 55%,#1F4A5F 100%)}
 .us-cta h2{text-transform:uppercase;font-weight:800}.us .us-cta h2 em{text-transform:none;color:var(--cta-em);font-weight:200}
@@ -851,6 +864,8 @@ html{scroll-behavior:smooth}
  .us-pan-f{right:14px;top:14px;width:112px}
  .us-pan-in{padding:18px}
  .us-pan h3{font-size:2.3rem}
+ .us-score{grid-template-columns:1fr 1fr;gap:8px}
+ .us-score>div{padding:16px 16px 18px}
  .us-yr{aspect-ratio:4/5.2;border-radius:20px}
  .us-yr-nav{gap:5px;padding:12px 12px 0}
  .us-yr-nav button{font-size:0;padding:10px 0 0}
@@ -895,7 +910,7 @@ html{scroll-behavior:smooth}
 
 <nav class="sp-nav" id="spNav" aria-label="Sur cette page">
   <div class="sp-nav-row">
-    <div class="sp-nav-in"><a href="#us-campus">Les campus</a><a href="#us-annee">Une année là-bas</a><a href="#us-accompagnement">Accompagnement</a></div>
+    <div class="sp-nav-in"><a href="#us-campus">Les campus</a><a href="#us-annee">Une année là-bas</a><a href="#us-etudes">Les études</a><a href="#us-accompagnement">Accompagnement</a></div>
     <a class="sp-nav-cta" href="/apply/?destination=us">En savoir plus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </nav>
@@ -952,6 +967,18 @@ html{scroll-behavior:smooth}
         <button type="button" role="tab" aria-selected="true" data-i="0" data-m="Septembre" data-t="La rentrée" data-d="Une pelouse immense, des milliers d&#x27;étudiants, des centaines de clubs. Le campus devient votre ville."><span>Septembre</span><i aria-hidden="true"></i></button><button type="button" role="tab" aria-selected="false" data-i="1" data-m="Novembre" data-t="Game day" data-d="Le samedi, tout le campus est au stade. Même ceux qui ne connaissent pas les règles."><span>Novembre</span><i aria-hidden="true"></i></button><button type="button" role="tab" aria-selected="false" data-i="2" data-m="Décembre" data-t="New York sous la neige" data-d="Les vacances d&#x27;hiver à Manhattan, comme dans les films."><span>Décembre</span><i aria-hidden="true"></i></button><button type="button" role="tab" aria-selected="false" data-i="3" data-m="Mars" data-t="Spring break" data-d="Une semaine de vacances, et toute la route de l&#x27;Ouest devant vous."><span>Mars</span><i aria-hidden="true"></i></button><button type="button" role="tab" aria-selected="false" data-i="4" data-m="Mai" data-t="Le jour des diplômes" data-d="Les toques volent, les familles applaudissent. Ce jour-là, ce sera le vôtre."><span>Mai</span><i aria-hidden="true"></i></button><button type="button" role="tab" aria-selected="false" data-i="5" data-m="Juillet" data-t="L&#x27;été en Californie" data-d="Le Golden Gate au coucher du soleil, et tout l&#x27;été pour explorer."><span>Juillet</span><i aria-hidden="true"></i></button>
       </div>
     </div>
+  </div>
+</section>
+<section class="us-facts" id="us-etudes">
+  <div class="sp-wrap">
+    <p class="us-kick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.3l7.1-.7z"/></svg>Les études</p>
+    <h2>Le système, <em>en quatre lignes.</em></h2>
+    <dl class="us-score" data-io>
+      <div style="--k:0"><dt>4</dt><dd><b>ans</b>pour le bachelor</dd></div>
+      <div style="--k:1"><dt>1–2</dt><dd><b>ans</b>pour le master</dd></div>
+      <div style="--k:2"><dt>2</dt><dd><b>rentrées</b>par an</dd></div>
+      <div style="--k:3" class="txt"><dt>IELTS ou TOEFL</dt><dd>Tous les cours sont en anglais : un test d'anglais est demandé à l'admission.</dd></div>
+    </dl>
   </div>
 </section>
 
