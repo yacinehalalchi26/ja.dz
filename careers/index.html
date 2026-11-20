@@ -237,7 +237,7 @@
 body.jam-open{overflow:hidden}
 @media(max-width:640px){.jam-burger{width:40px;height:40px;border-radius:10px}.jam-burger span{width:18px}}
 @media(prefers-reduced-motion:reduce){.jam-menu,.jam-veil,.jam-burger span{transition:none}}
-</style>
+.jam-sub{display:flex;flex-direction:column;padding:2px 0 10px 14px;margin:0 0 0 2px;border-left:1px solid rgba(37,37,42,.12);border-bottom:1px solid rgba(37,37,42,.08)}.jam-links .jam-sub a{padding:7px 0;font-size:.9rem;font-weight:500;color:#5A5F66;border-bottom:0}.jam-links .jam-sub a span{width:6px;height:6px}.jam-links .jam-sub a:hover,.jam-links .jam-sub a.on{color:#244E66}</style>
 <style>
 /* ===== héros photo pleine largeur ===== */
 .hero{position:relative;min-height:min(72vh,680px);display:flex;align-items:flex-end;padding:clamp(28px,5vw,56px) 0!important;background:#25252A;color:#fff;isolation:isolate;overflow:hidden}
@@ -488,7 +488,7 @@ body.jam-open{overflow:hidden}
       <ul>
         <li><a href="/camps/">Nos séjours</a></li>
         <li><a href="/study/">Étudier à l'étranger</a></li>
-        <li><a href="/language/">Anglais en ligne</a></li>
+        <li><a href="/language/">Langues</a></li>
         <li><a href="/book/">Préinscription</a></li>
         <li><a href="/brochure/">Brochure gratuite</a></li>
         <li><a href="/blog/">Blog</a></li>
@@ -565,7 +565,7 @@ body.jam-open{overflow:hidden}
 <div class="jam-veil" id="jamVeil" hidden></div>
 <nav class="jam-menu" id="jamMenu" aria-label="Menu principal" aria-hidden="true">
   <div class="jam-menu-head"><span>Menu</span><button type="button" class="jam-close" id="jamClose" aria-label="Fermer le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="jam-links"><a href="/camps/">Nos séjours<span></span></a><a href="/study/">Étudier à l'étranger<span></span></a><a href="/language/">Anglais en ligne<span></span></a><a href="/blog/">Blog<span></span></a><a href="/brochure/">Brochure gratuite<span></span></a></div>
+  <div class="jam-links"><a href="/camps/">Nos séjours<span></span></a><a href="/study/">Étudier à l'étranger<span></span></a><div class="jam-sub"><a href="/study/uk/">Royaume-Uni<span></span></a><a href="/study/us/">États-Unis<span></span></a><a href="/study/cz/">République tchèque<span></span></a><a href="/study/cn/">Chine<span></span></a></div><a href="/language/">Langues<span></span></a><a href="/blog/">Blog<span></span></a><a href="/brochure/">Brochure gratuite<span></span></a></div>
   <div class="jam-contact">
     <b>Nous contacter</b>
     <a href="tel:+213550527722">+213 (0) 550 52 77 22</a>
