@@ -525,6 +525,18 @@ body.jam-open{overflow:hidden}
 @media(max-width:860px){.nx-t{white-space:normal}.nx-wrap{grid-template-columns:1fr}.nx-list a{grid-template-columns:minmax(0,1fr) 24px;gap:4px 14px;padding:20px 2px}.nx-d{grid-column:1;grid-row:2;text-align:left}.nx-list svg{grid-column:2;grid-row:1/3}}
 @media(prefers-reduced-motion:reduce){.nx *,.nx *::after{transition:none!important}}
 </style>
+<style id="ja-verre">
+/* ===== style verre (clair) : en-tête, burger, téléphone, menu ===== */
+.jah-header,.sc-header,.sa-header,.jam-head,header.top{background:rgba(255,255,255,.62)!important;-webkit-backdrop-filter:blur(22px) saturate(170%)!important;backdrop-filter:blur(22px) saturate(170%)!important;border-bottom:1px solid rgba(255,255,255,.5)!important;box-shadow:0 1px 0 rgba(37,37,42,.06),0 10px 30px -18px rgba(37,37,42,.35)!important}
+.jah-header .jam-burger,.sc-header .jam-burger,.sa-header .jam-burger,.jam-head .jam-burger,header.top .jam-burger,.jah-header-phone,.sc-header-phone,.sa-header-phone,.jam-phone,header.top .phone{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.45))!important;-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border:1px solid rgba(37,37,42,.1)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 4px 14px -6px rgba(37,37,42,.25)!important;border-radius:12px!important;transition:background .35s,box-shadow .35s,transform .35s cubic-bezier(.16,1,.3,1)}
+.jah-header .jam-burger:hover,.sc-header .jam-burger:hover,.sa-header .jam-burger:hover,.jam-head .jam-burger:hover,header.top .jam-burger:hover,.jah-header-phone:hover,.sc-header-phone:hover,.sa-header-phone:hover,.jam-phone:hover,header.top .phone:hover{background:rgba(255,255,255,.95)!important;box-shadow:inset 0 1px 0 #fff,0 6px 18px -6px rgba(37,37,42,.3)!important}
+.jah-header .jam-burger:active,.sc-header .jam-burger:active,.sa-header .jam-burger:active,.jam-head .jam-burger:active,header.top .jam-burger:active,.jah-header-phone:active,.sc-header-phone:active,.sa-header-phone:active,.jam-phone:active,header.top .phone:active{transform:scale(.97)}
+.jam-veil{background:rgba(37,37,42,.18)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important}
+.jam-menu{background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(247,244,238,.72))!important;-webkit-backdrop-filter:blur(30px) saturate(170%);backdrop-filter:blur(30px) saturate(170%);border-right:1px solid rgba(255,255,255,.6);box-shadow:inset -1px 0 0 rgba(37,37,42,.06),20px 0 60px rgba(37,37,42,.18)!important}
+.jam-close,.jam-fo{background:rgba(255,255,255,.6)!important;border-color:rgba(37,37,42,.1)!important;box-shadow:inset 0 1px 0 #fff}
+.jam-links a{border-bottom-color:rgba(37,37,42,.08)!important}
+@media(prefers-reduced-transparency:reduce){.jah-header,.sc-header,.sa-header,.jam-head,header.top{background:#fff!important}.jam-menu{background:#fff!important}}
+</style>
 </head>
 <body>
 <header class="jam-head">
