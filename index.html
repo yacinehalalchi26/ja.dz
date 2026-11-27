@@ -312,6 +312,48 @@ html[dir="rtl"] .jam-sub{border-right-color:rgba(255,255,255,.2)!important}
  ]
 }</script>
 <style id="ja-logo-photo">.top .ja-logo{display:block;height:clamp(44px,6.2vh,58px)!important;width:clamp(69px,9.77vh,91px)!important;background:center/contain no-repeat}@media(max-width:640px){.top .ja-logo{height:44px!important;width:69px!important}}.ja-seo-photo{flex:none;width:100%;margin:18px 0 4px;border-radius:14px;overflow:hidden;aspect-ratio:4/3}.ja-seo-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 62%}</style>
+<style id="ja-svcs">
+.ctas{display:block!important;margin-top:clamp(20px,3.2vh,34px)}
+.svc-lab{margin:0 0 10px!important;font-size:.7rem!important;font-weight:600!important;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75)!important;text-shadow:0 1px 3px rgba(0,0,0,.45);display:block!important;max-width:none!important;animation:none!important}
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(100%,1000px);border-radius:22px;overflow:hidden;
+  background:rgba(18,20,26,.28);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 18px 50px -20px rgba(0,0,0,.6)}
+.svc{display:flex;align-items:center;gap:14px;padding:18px 18px 18px 20px;color:#fff;text-decoration:none;position:relative;transition:background .35s}
+.svc+.svc{border-inline-start:1px solid rgba(255,255,255,.14)}
+.svc-ic{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--b);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+.svc-ic svg{width:21px;height:21px}
+.svc-t{display:grid;gap:2px;flex:1;min-width:0}
+.svc b{font-size:1rem;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.svc small{font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.3}
+.svc-go{flex:none;width:18px;height:18px;color:rgba(255,255,255,.55);transition:transform .4s cubic-bezier(.16,1,.3,1),color .3s}
+.svc:hover{background:rgba(255,255,255,.1)}
+.svc:hover .svc-go{color:#fff;transform:translateX(3px)}
+.svc:active{background:rgba(255,255,255,.16)}
+.svc:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+html[dir="rtl"] .svc-go{transform:scaleX(-1)}
+html[dir="rtl"] .svc:hover .svc-go{transform:scaleX(-1) translateX(3px)}
+html[dir="rtl"] .svc{padding:18px 20px 18px 18px}
+.svc-help{display:inline-flex;align-items:center;gap:9px;margin-top:16px;color:rgba(255,255,255,.88);text-decoration:none;font-size:.92rem;text-shadow:0 1px 3px rgba(0,0,0,.45)}
+.svc-help svg{width:18px;height:18px;flex:none;color:#fff}
+.svc-help u{text-decoration:none;font-weight:600;color:#fff;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:2px;transition:background-size .4s}
+.svc-help:hover u{background-size:0 1px;background-position:100% 100%}
+@media(max-width:860px){
+ .svcs{grid-template-columns:1fr;width:100%;border-radius:20px}
+ .svc{padding:13px 14px}
+ .svc+.svc{border-inline-start:0;border-top:1px solid rgba(255,255,255,.14)}
+ .svc-ic{width:38px;height:38px;border-radius:11px}.svc-ic svg{width:19px;height:19px}
+ .svc b{font-size:.98rem}.svc small{font-size:.76rem}
+ .svc-help{margin-top:14px;font-size:.88rem}
+}
+@media(max-height:700px) and (max-width:860px){.svc{padding:10px 12px}.svc-lab{display:none!important}}
+
+/* chaque choix dans sa propre carte de verre */
+.svcs{gap:12px;background:none!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-radius:0!important;overflow:visible!important}
+.svc{border-radius:18px;background:rgba(18,20,26,.3);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 14px 40px -18px rgba(0,0,0,.6)}
+.svc:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32)!important;transform:translateY(-2px)}
+.svc{transition:background .35s,border-color .35s,transform .4s cubic-bezier(.16,1,.3,1)}
+@media(max-width:860px){.svcs{gap:8px}.svc{border-radius:16px}}
+</style>
 <script id="ja-page" type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://www.ja.dz/#webpage", "url": "https://www.ja.dz/", "name": "JA Juniors Academy – Séjours. Études. Langues.", "isPartOf": {"@id": "https://www.ja.dz/#website"}, "about": {"@id": "https://www.ja.dz/#organization"}, "primaryImageOfPage": {"@type": "ImageObject", "@id": "https://www.ja.dz/#photo", "url": "https://www.ja.dz/ja-juniors-academy-londres.jpg", "contentUrl": "https://www.ja.dz/ja-juniors-academy-londres.jpg", "width": 1600, "height": 1200, "caption": "Deux jeunes de JA Juniors Academy à Londres, sur la Tamise, devant Big Ben"}, "image": ["https://www.ja.dz/ja-juniors-academy-londres.jpg", "https://www.ja.dz/ja-juniors-academy-londres-16x9.jpg", "https://www.ja.dz/ja-juniors-academy-partage.jpg"], "thumbnailUrl": "https://www.ja.dz/ja-juniors-academy-londres.jpg"}</script>
 <meta name="thumbnail" content="https://www.ja.dz/ja-juniors-academy-londres.jpg">
 </head>
@@ -339,18 +381,14 @@ html[dir="rtl"] .jam-sub{border-right-color:rgba(255,255,255,.2)!important}
     <h1 id="h1"></h1>
     <p data-fr="Londres, Oxford, New York, Shanghai, Barcelone. <span class='l2'>Nous faisons du monde leur salle de classe.</span>" data-ar="لندن، أكسفورد، نيويورك، شنغهاي، برشلونة. <span class='l2'>نجعل من العالم قاعة درسهم.</span>">Londres, Oxford, New York, Shanghai, Barcelone. <span class='l2'>Nous faisons du monde leur salle de classe.</span></p>
     <div class="ctas">
-      <a class="btn btn-main" id="cta1" href="/camps/"><span data-fr="Je suis prêt" data-ar="أنا مستعد">Je suis prêt</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      <a class="btn btn-ghost" id="cta2" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer"><span data-fr="Parler à un conseiller" data-ar="تحدث مع مستشار">Parler à un conseiller</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <p class="svc-lab" data-fr="Que souhaitez-vous faire ?" data-ar="ماذا تريد أن تفعل؟">Que souhaitez-vous faire ?</p>
+      <nav class="svcs" aria-label="Nos services"><a class="svc" href="/camps/"><span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 19h19M3.6 13.6l3.3 2.7 13.4-5.8a1.7 1.7 0 0 0-1.3-3.1l-4.6 1.6-6.2-4.4-2.1.8 3.7 5-3.6 1.4-2.2-1.6-1.6.6z"/></svg></span><span class="svc-t"><b data-fr="Séjours linguistiques" data-ar="الرحلات اللغوية">Séjours linguistiques</b><small data-fr="Pour les 6 – 18 ans" data-ar="للأعمار من 6 إلى 18 سنة">Pour les 6 – 18 ans</small></span><svg class="svc-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="svc" href="/study/"><span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 9v6"/></svg></span><span class="svc-t"><b data-fr="Études à l'étranger" data-ar="الدراسة في الخارج">Études à l'étranger</b><small data-fr="UK · USA · Chine · Tchéquie" data-ar="بريطانيا · أمريكا · الصين · التشيك">UK · USA · Chine · Tchéquie</small></span><svg class="svc-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><a class="svc" href="/language/"><span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M17 9h3a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-4-3h-2"/></svg></span><span class="svc-t"><b data-fr="Langues" data-ar="اللغات">Langues</b><small data-fr="En ligne, profs natifs" data-ar="دروس عبر الإنترنت مع أساتذة ناطقين">En ligne, profs natifs</small></span><svg class="svc-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></nav>
+      <a class="svc-help" id="cta2" href="https://wa.me/213550527722" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg><span data-fr="Une question ? <u>Parler à un conseiller</u>" data-ar="لديك سؤال؟ <u>تحدث مع مستشار</u>">Une question ? <u>Parler à un conseiller</u></span></a>
     </div>
   </section>
 
   <footer class="bottom">
    <div class="bottom-in">
-    <nav class="chips" aria-label="Nos services">
-      <a href="/camps/"><i>01</i><b data-fr="Séjours<span class='long'> linguistiques</span>" data-ar="الرحلات<span class='long'> اللغوية</span>">Séjours<span class="long"> linguistiques</span></b><small data-fr="6 – 18 ans" data-ar="6 – 18 سنة">6 – 18 ans</small></a>
-      <a href="/study/"><i>02</i><b data-fr="Études<span class='long'> à l'étranger</span>" data-ar="الدراسة<span class='long'> في الخارج</span>">Études<span class="long"> à l'étranger</span></b><small data-fr="UK · Chine · USA" data-ar="بريطانيا · الصين · أمريكا">UK · Chine · USA</small></a>
-      <a href="/language/"><i>03</i><b data-fr="Anglais<span class='long'> en ligne</span>" data-ar="الإنجليزية<span class='long'> عبر الإنترنت</span>">Anglais<span class="long"> en ligne</span></b><small data-fr="Professeurs natifs" data-ar="أساتذة ناطقون بالإنجليزية">Professeurs natifs</small></a>
-    </nav>
     <div class="so">
       <a href="https://www.instagram.com/juniors.academy.dz" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a href="https://www.facebook.com/juniors.academy.dz" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v9h4v-9h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
